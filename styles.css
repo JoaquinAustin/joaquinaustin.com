@@ -786,7 +786,7 @@ main.wrap.page-project {
 
 .falcon-tags {
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 
 .falcon-tags button,
@@ -794,8 +794,11 @@ main.wrap.page-project {
   font-family: inherit;
   font-size: 14px;
   line-height: 20px;
-  padding: 6px 12px;
-  border-radius: 8px;
+  height: 36px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
@@ -811,6 +814,12 @@ main.wrap.page-project {
   background: transparent;
   color: var(--home-muted);
   border: 1px solid var(--home-muted);
+}
+
+.falcon-tags .tag-inactive:hover {
+  background: transparent;
+  color: var(--home-text);
+  border-color: var(--home-text);
 }
 
 .falcon-section {
@@ -935,10 +944,6 @@ main.wrap.page-project {
   stroke: currentColor;
 }
 
-/* "Only Visuals" mode — hides all copy and collapses spacing so
-   only the image placeholders remain, matching the Figma spec:
-   Intro → block stays 72px; tags → first image 32px; image-only
-   sections stack at 16px; last image → legal note back to 72px. */
 /* "Only Visuals" mode — hides all copy and collapses spacing so
    only the image placeholders remain, matching the Figma spec:
    Intro → block stays 72px; tags → first image 32px; image-only
