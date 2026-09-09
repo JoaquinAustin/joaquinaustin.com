@@ -1304,7 +1304,7 @@ body.menu-open .project-v2-menu-line:last-child {
     justify-content: flex-start;
     gap: 12px;
     font-size: 22px;
-    padding: 160px 24px 24px; /* ~88px below the (two-line) name */
+    padding: 208px 24px 24px; /* more room below the name */
     z-index: 999;
     opacity: 0;
     visibility: hidden;
@@ -1319,6 +1319,10 @@ body.menu-open .project-v2-menu-line:last-child {
     pointer-events: auto;
     transform: translateY(0);
     transition: opacity .25s ease, transform .25s ease, visibility 0s linear 0s;
+  }
+
+  body.menu-open .page-home-v2 .theme-switch {
+    display: none;
   }
 }
 
