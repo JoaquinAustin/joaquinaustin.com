@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = bounds.left + Math.random() * (bounds.right - bounds.left);
 
       const targets = document.querySelectorAll(
-        ".home-project-image, .project-ph, .project-impact-card"
+        ".home-project-image, .project-ph, .project-ph-static, .project-impact-card"
       );
       let landY = vh + 20;
       let hitBox = false;
