@@ -1041,6 +1041,10 @@ body.gap-short .project-v2-content .project-section {
   width: 100%;
 }
 
+.project-v2-content .project-v2-mobile-short-summary {
+  margin-bottom: 32px;
+}
+
 @media (max-width: 900px) {
   body.mode-short .project-v2-mobile-short-summary {
     display: flex;
