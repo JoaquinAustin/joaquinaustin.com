@@ -1035,10 +1035,20 @@ body.gap-short .project-v2-content .project-section {
    on mobile via body.mode-short (set by the same JS that drives the
    Full Case/Keep it short switch). */
 .project-v2-mobile-short-summary {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
+}
+
+/* Desktop uses the real sidebar summary instead — this duplicate
+   stays hidden here no matter what, overriding the inline
+   style.display the JS mode-switch sets on it (which is what
+   actually shows/hides it at mobile widths, below). */
+@media (min-width: 901px) {
+  .project-v2-mobile-short-summary {
+    display: none !important;
+  }
 }
 
 .project-v2-content .project-v2-mobile-short-summary {
@@ -1046,10 +1056,6 @@ body.gap-short .project-v2-content .project-section {
 }
 
 @media (max-width: 900px) {
-  body.mode-short .project-v2-mobile-short-summary {
-    display: flex;
-  }
-
   .project-v2-mobile-short-summary .project-v2-short-lead {
     font-size: 20px;
     line-height: 28px;
