@@ -1129,7 +1129,7 @@ body.gap-short .project-v2-content .project-section {
     width: auto;
     height: auto;
     padding: 0;
-    margin: -8px 0 32px; /* main's own padding at this width is
+    margin: -8px 0 32px 4px; /* main's own padding at this width is
       42px 24px — this cancels the extra 18px of top padding so the
       name lands at exactly (24,24) from the viewport corner, same
       as when the header was fixed */
@@ -1485,20 +1485,22 @@ body.menu-open {
    fixed corner position while the menu is open, otherwise it stays
    wherever the page had scrolled to and isn't visible at all. */
 @media (max-width: 900px) {
-  body.menu-open .project-v2-name {
+  body.menu-open main.page-project-v2:not(.page-home-v2):not(.page-archive-v2) .project-v2-name {
     position: fixed;
     top: 24px;
-    left: 20px;
+    left: 24px;
     z-index: 1001;
   }
 }
 
-/* Home/About: the name stays fixed at all times on mobile — unlike
-   project pages, there's no Full Case/Keep it short switch to "take
-   its place" once scrolled, so there's no reason for it to scroll
-   away. This overrides the project-pages default further up. */
+/* Home/About/Archive: the name stays fixed at all times on mobile —
+   unlike other project pages, there's no Full Case/Keep it short
+   switch to "take its place" once scrolled, so there's no reason
+   for it to scroll away. This overrides the project-pages default
+   further up. */
 @media (max-width: 900px) {
-  .page-home-v2 .project-v2-sidebar {
+  .page-home-v2 .project-v2-sidebar,
+  .page-archive-v2 .project-v2-sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -1508,7 +1510,8 @@ body.menu-open {
     z-index: 998;
   }
 
-  .page-home-v2 .project-v2-content {
+  .page-home-v2 .project-v2-content,
+  .page-archive-v2 .project-v2-content {
     margin-top: 88px; /* clears the fixed header's own height */
   }
 
