@@ -1493,6 +1493,36 @@ body.menu-open {
   }
 }
 
+/* Home/About: the name stays fixed at all times on mobile — unlike
+   project pages, there's no Full Case/Keep it short switch to "take
+   its place" once scrolled, so there's no reason for it to scroll
+   away. This overrides the project-pages default further up. */
+@media (max-width: 900px) {
+  .page-home-v2 .project-v2-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    margin: 0;
+    z-index: 998;
+  }
+
+  .page-home-v2 .project-v2-content {
+    margin-top: 88px; /* clears the fixed header's own height */
+  }
+
+  .page-index-v2 .project-v2-content {
+    margin-top: 130px; /* extra breathing room below the header on
+      Home specifically */
+  }
+
+  .page-index-v2 .project-v2-content .project-v2-overview {
+    margin-bottom: 32px; /* intro paragraph closer to the first
+      project thumbnail, now that there's more room up top instead */
+  }
+}
+
 /* About page: everything at 20 — body copy and headings alike, no
    size jump for "About" / "About AI". */
 .page-about-v2 .project-lead {
