@@ -149,18 +149,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const v2SwitchEls = document.querySelectorAll(".project-v2-switch [data-mode]");
   if (v2SwitchEls.length) {
     // Sequential cross-fade: the outgoing content fades fully to
-    // invisible and is pulled out of the flow (display:none) BEFORE
-    // the incoming content appears and fades in. A simultaneous
-    // cross-fade (both fading at once) looks broken here because
-    // Full Case and Keep it short have different content and
-    // heights — for a moment you'd see both the TOC and the short
-    // summary, or both the lead paragraph and the "Overview"
-    // heading, stacked on top of each other.
-    const FADE_MS = 200;
+    // invisible AND collapses its own height (measured, not an
+    // arbitrary large max-height — animating from an oversized value
+    // to 0 just sits still for most of the transition then snaps at
+    // the very end) before being pulled out of the flow. The
+    // incoming content does the reverse: expands from 0 to its real
+    // height while fading in. This is what makes the sections below
+    // settle into place smoothly instead of jumping the instant a
+    // whole block disappears. A simultaneous cross-fade (both fading
+    // at once, no sequencing) looks broken here because Full Case
+    // and Keep it short have different content — for a moment you'd
+    // see both the TOC and the short summary, or both the lead
+    // paragraph and the "Overview" heading, stacked on top of each
+    // other.
+    //
+    // Opacity and height run on their own timings rather than
+    // together, like a real accordion: on the way out, the text
+    // fades to invisible quickly, then the now-empty space folds up
+    // — instead of visibly "squishing" readable text as it shrinks.
+    // On the way in, the space opens up first and the text fades in
+    // once there's room for it, not while it's still cramped.
+    const HEIGHT_MS = 280;
+    const OPACITY_MS = 150;
+    const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
     let timers = [];
     const clearV2Timers = () => {
       timers.forEach((t) => window.clearTimeout(t));
       timers = [];
+    };
+
+    const resetCollapseStyles = (node) => {
+      node.style.maxHeight = "";
+      node.style.overflow = "";
+      node.style.transition = "";
     };
 
     const applyV2Mode = (isShort, animate) => {
@@ -173,44 +194,77 @@ document.addEventListener("DOMContentLoaded", () => {
         toHide.forEach((node) => {
           node.style.display = "none";
           node.style.opacity = "";
+          resetCollapseStyles(node);
         });
         toShow.forEach((node) => {
           node.style.display = "";
           node.style.opacity = "";
+          resetCollapseStyles(node);
         });
         document.body.classList.toggle("mode-short", isShort);
         document.body.classList.toggle("gap-short", isShort);
         return;
       }
 
-      // Step 1: fade out whatever's currently showing, in place.
+      // Step 1: fade out quickly, then fold the now-empty height up
+      // over a slightly longer, smoother curve. Measure the real
+      // height first so the collapse is proportional to actual
+      // content, not a guess.
       toHide.forEach((node) => {
+        const h = node.scrollHeight;
+        node.style.overflow = "hidden";
+        node.style.maxHeight = h + "px";
+        void node.offsetHeight; // commit the starting height before animating
+        node.style.transition =
+          "opacity " + OPACITY_MS + "ms " + EASE + ", " +
+          "max-height " + HEIGHT_MS + "ms " + EASE + ", " +
+          "margin-bottom " + HEIGHT_MS + "ms " + EASE;
         node.style.opacity = "0";
+        node.style.maxHeight = "0px";
+        node.style.marginBottom = "0px";
       });
 
-      // Step 2: once it's fully invisible, drop it from the flow and
-      // fade the new content in — never both visible at once.
+      // Step 2: once it's fully collapsed, drop it from the flow and
+      // open up the new content's space — never both visible at once.
       timers.push(window.setTimeout(() => {
         toHide.forEach((node) => {
           node.style.display = "none";
+          resetCollapseStyles(node);
+          node.style.marginBottom = "";
         });
 
         toShow.forEach((node) => {
           node.style.display = "";
           node.style.opacity = "0";
+          node.style.overflow = "hidden";
+          node.style.maxHeight = "0px";
         });
-        // Reflow so the browser commits display:'' + opacity:0 above
-        // before we transition opacity back up — otherwise it can
-        // skip straight to the end state with no visible fade-in.
+        // Reflow so the browser commits the collapsed starting state
+        // above before we transition it open — otherwise it can skip
+        // straight to the end state with no visible animation.
         void document.body.offsetHeight;
 
         document.body.classList.toggle("mode-short", isShort);
         document.body.classList.toggle("gap-short", isShort);
 
         toShow.forEach((node) => {
+          const targetHeight = node.scrollHeight;
+          node.style.transition =
+            "opacity " + OPACITY_MS + "ms " + EASE + " " + (HEIGHT_MS - OPACITY_MS) + "ms, " +
+            "max-height " + HEIGHT_MS + "ms " + EASE;
+          node.style.maxHeight = targetHeight + "px";
           node.style.opacity = "";
         });
-      }, FADE_MS));
+
+        // Once fully expanded, drop the inline max-height/overflow so
+        // the element isn't left artificially clipped if its content
+        // ever changes size later (e.g. a window resize).
+        timers.push(window.setTimeout(() => {
+          toShow.forEach((node) => {
+            resetCollapseStyles(node);
+          });
+        }, HEIGHT_MS));
+      }, HEIGHT_MS));
     };
 
     // Set the initial hidden state immediately (no animation) so
