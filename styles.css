@@ -1113,27 +1113,26 @@ body.gap-short .project-v2-content .project-section {
     gap: 0;
   }
 
-  /* Name (left) + hamburger menu (right) share a fixed header bar
-     that stays in place while the page scrolls — overlapping the
-     content underneath is intentional here, not a bug. The menu
-     opens the section TOC as a full-screen overlay. The Full
-     Case/Keep it short switch moves into the content column (see
-     .project-v2-switch-mobile further down) instead of living in
-     the header — no room for it there once the menu icon is in.
+  /* Name scrolls away normally with the page. The hamburger menu is
+     detached from the sidebar and stays independently fixed in the
+     corner throughout. Once the name has scrolled past, the Full
+     Case/Keep it short switch (sticky, further down) catches at the
+     same top offset as the menu button, visually taking the name's
+     place. The menu opens the section TOC as a full-screen overlay.
      The theme switch moves out of the sidebar entirely; see the
      shared fixed bottom-left pill further down. */
   .project-v2-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: static;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width: auto;
     height: auto;
-    padding: 24px;
-    z-index: 998;
+    padding: 0;
+    margin: -8px 0 32px; /* main's own padding at this width is
+      42px 24px — this cancels the extra 18px of top padding so the
+      name lands at exactly (24,24) from the viewport corner, same
+      as when the header was fixed */
   }
 
   .project-v2-name {
@@ -1149,7 +1148,10 @@ body.gap-short .project-v2-content .project-section {
 
   .project-v2-sidebar .project-v2-menu-toggle {
     display: flex;
-    order: 2;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1001;
   }
 
   .project-v2-nav-group {
@@ -1188,11 +1190,15 @@ body.gap-short .project-v2-content .project-section {
     font-size: 22px;
     padding: 208px 24px 24px;
     z-index: 999;
-    opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: visibility 0s linear .25s;
+  }
+
+  .project-v2-mobile-nav a {
+    opacity: 0;
     transform: translateY(-12px);
-    transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
+    transition: opacity .25s ease, transform .25s ease;
   }
 
   .project-v2-mobile-nav a {
@@ -1205,11 +1211,14 @@ body.gap-short .project-v2-content .project-section {
   }
 
   body.menu-open .project-v2-mobile-nav {
-    opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transition: visibility 0s linear 0s;
+  }
+
+  body.menu-open .project-v2-mobile-nav a {
+    opacity: 1;
     transform: translateY(0);
-    transition: opacity .25s ease, transform .25s ease, visibility 0s linear 0s;
   }
 
   .project-v2-short-summary {
@@ -1223,12 +1232,18 @@ body.gap-short .project-v2-content .project-section {
      up for .project-v2-switch-mobile. */
   .project-v2-switch-mobile {
     display: flex;
+    position: sticky;
+    top: 28px; /* catches level with the fixed menu button, taking
+      the name's place once it's scrolled past */
+    z-index: 900;
     margin-bottom: 32px;
   }
 
   .project-v2-switch-mobile button,
   .project-v2-switch-mobile a {
-    background: var(--home-bg);
+    background: color-mix(in srgb, var(--home-bg) 98%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .project-v2-content .project-meta {
@@ -1239,9 +1254,6 @@ body.gap-short .project-v2-content .project-section {
   .project-v2-content {
     flex: none;
     max-width: none;
-    margin-top: 88px; /* clears the fixed header's own height so the
-      page doesn't open with content already hidden under it — later
-      scrolling under it is fine, this is just the starting position */
     padding-bottom: 96px; /* clears the fixed bottom-left theme pill
       once scrolled all the way down, so it never sits on top of
       "Back to Work" */
@@ -1469,6 +1481,18 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* The name normally scrolls away with the page — pin it back to its
+   fixed corner position while the menu is open, otherwise it stays
+   wherever the page had scrolled to and isn't visible at all. */
+@media (max-width: 900px) {
+  body.menu-open .project-v2-name {
+    position: fixed;
+    top: 24px;
+    left: 20px;
+    z-index: 1001;
+  }
+}
+
 /* About page: everything at 20 — body copy and headings alike, no
    size jump for "About" / "About AI". */
 .page-about-v2 .project-lead {
@@ -1515,13 +1539,5 @@ body.menu-open {
     background: var(--home-bg);
     padding: 8px 12px;
     border-radius: 8px;
-  }
-}
-
-@media (max-width: 900px) {
-  /* More breathing room between the fixed name bar and "Hello!" on
-     Home specifically (88px default -> 120px here). */
-  .page-index-v2 .project-v2-content {
-    margin-top: 120px;
   }
 }
