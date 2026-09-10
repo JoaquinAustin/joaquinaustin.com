@@ -621,24 +621,29 @@ body[data-theme="earth"] {
    classes untouched; only adds the v2-specific centering wrapper.
    ================================================================ */
 .page-password-v2 .project-v2-content {
-  min-height: calc(100vh - 84px);
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  max-width: none;
+  padding: 0 24px;
+  display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none; /* this box spans the full screen just to
+    center its child — without this it sits on top of (and blocks
+    clicks on) the name in the corner, since it comes after it in
+    the markup */
+}
+
+.page-password-v2 .password-box {
+  pointer-events: auto;
 }
 
 @media (max-width: 900px) {
   .page-password-v2 .project-v2-content {
-    position: fixed;
     top: 88px; /* clears the fixed name header */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
     padding: 24px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -803,7 +808,6 @@ main.wrap.page-project-v2 {
   background: none;
   cursor: pointer;
   text-decoration: none;
-  transition: border-color .2s ease, color .2s ease;
 }
 
 .project-v2-switch .project-v2-switch-active {
@@ -1317,7 +1321,7 @@ body.gap-short .project-v2-content .project-section {
 }
 
 .home-v2-project-title-row .lock-icon {
-  margin-top: 2px; /* optically aligns with the heading's cap height */
+  margin-top: -2px;
   stroke: var(--home-muted);
 }
 
