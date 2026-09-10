@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Calculator — Zurich Insurance — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=zurich-car.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="carMobileToc">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="carMobileToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#context" data-target="context">Context</a>
+          <a href="#finding-solutions" data-target="finding-solutions">Finding solutions</a>
+          <a href="#outcome" data-target="outcome">Outcomes</a>
+          <a href="#business-impact" data-target="business-impact">Business impact</a>
+          <a href="#full-flow-overview" data-target="full-flow-overview">Full flow overview</a>
+          <a href="#conclusions" data-target="conclusions">Conclusions</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+          <p class="project-v2-short-lead">Car insurance is one of the company's flagship products, and its online calculator is one of the most requested tools by users. I've been leading the product alongside the business team.</p>
+          <div class="project-v2-short-stats">
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">+11%</p>
+              <p class="project-v2-short-stat-desc">Direct conversion.</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">8%</p>
+              <p class="project-v2-short-stat-desc">Booked appointments using the calendar feature.</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">17%</p>
+              <p class="project-v2-short-stat-desc">Engaged with the "Save for later" feature.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+        <p class="project-v2-short-lead">Car insurance is one of the company's flagship products, and its online calculator is one of the most requested tools by users. I've been leading the product alongside the business team.</p>
+        <div class="project-v2-short-stats">
+          <div class="project-v2-short-stat">
+            <p class="project-v2-short-stat-title">+11%</p>
+            <p class="project-v2-short-stat-desc">Direct conversion.</p>
+          </div>
+          <div class="project-v2-short-stat">
+            <p class="project-v2-short-stat-title">8%</p>
+            <p class="project-v2-short-stat-desc">Booked appointments using the calendar feature.</p>
+          </div>
+          <div class="project-v2-short-stat">
+            <p class="project-v2-short-stat-title">17%</p>
+            <p class="project-v2-short-stat-desc">Engaged with the "Save for later" feature.</p>
+          </div>
+        </div>
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <h2 class="v2-short-only">Overview</h2>
+        <p class="project-lead v2-full-only">Car insurance is one of the company's flagship products, and its online calculator is one of the most requested tools by users. For the past two years, I've been leading the Car Calculator product alongside the business team, constantly working to optimize the user experience and increase booking conversions.</p>
+        <img class="project-ph" src="images/CarCalculator-01.webp" alt="Car Calculator intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Product Designer @ Digitup Studio</p>
+          <p>Year<br>2022</p>
+        </div>
+      </section>
+
+      <div id="context" class="project-outcome-group v2-full-only">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Context</h2>
+            <p class="project-copy">Despite having a very high volume of users, the dropout rate was above normal levels. From a product perspective, pricing and coverage were competitive and aligned with market standards. From a technological standpoint, everything was functioning correctly. We therefore focused on data analysis and user interviews to understand the reasons behind the high dropout rate.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/CarCalculator-02.webp" alt="Context screenshot 1">
+            <img class="project-ph" src="images/CarCalculator-03.webp" alt="Context screenshot 2">
+          </div>
+        </section>
+
+        <div class="project-section-text">
+          <h2>Framing the problem</h2>
+          <div class="project-impact-cards">
+            <div class="project-impact-card">
+              <p class="project-impact-number">29%</p>
+              <p class="project-impact-desc">Of users drop off after the second step. Most of them believe that there are many things they have to answer before they can see the price.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">43%</p>
+              <p class="project-impact-desc">Of users drop at the packages view. Once they reach the product offering, they find it difficult to understand the product.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">Time</p>
+              <p class="project-impact-desc">Average users take between 2 and 3 weeks to decide on a car insurance, often repeatedly comparing different companies.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <section id="finding-solutions" class="project-section">
+        <div class="project-section-text">
+          <h2>Finding solutions</h2>
+          <p class="project-copy v2-full-only">We focused on the user flow to reach a meaningful price and ensure it doesn't change abruptly as we learn more about the user. Close collaboration with business and legal teams was key to understanding the minimum information required. As a result, we reduced the flow by one step and enabled users to reach the price earlier in the journey.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/CarCalculator-04.webp" alt="Finding solutions screenshot 1">
+          <img class="project-ph" src="images/CarCalculator-05.webp" alt="Finding solutions screenshot 2">
+        </div>
+      </section>
+
+      <div id="outcome" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>New product offer and customization</h2>
+            <p class="project-copy v2-full-only">The new table allows users to compare prices and coverage, but also to customize them, as well as the add-ons, all in one place. Previously, customization had to be done within each option, making the comparison process lengthy and confusing.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/CarCalculator-06.webp" alt="New product offer and customization screenshot 1">
+            <img class="project-ph" src="images/CarCalculator-07.webp" alt="New product offer and customization screenshot 2">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Save for later</h2>
+            <p class="project-copy v2-full-only">We implemented a new feature that allows users to save their progress at any point in the flow. By leaving their email address, they can return via a link and continue exactly where they left off.</p>
+          </div>
+          <img class="project-ph" src="images/CarCalculator-08.webp" alt="Save for later screenshot">
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Dynamic panels</h2>
+            <p class="project-copy v2-full-only">We wanted to explain coverages in a more user-friendly way. Instead of using tooltips, we designed a new overlay panel where users can access real-life examples and short videos that clarify key concepts. When needed, they can contact an agent at any time or book an appointment for personalized advice.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/CarCalculator-09.webp" alt="Dynamic panels screenshot 1">
+            <img class="project-ph" src="images/CarCalculator-10.webp" alt="Dynamic panels screenshot 2">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>New final screen</h2>
+            <p class="project-copy v2-full-only">The updated end screen of the process helps users understand what they've purchased and the next steps to take.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/CarCalculator-11.webp" alt="New final screen screenshot 1">
+            <img class="project-ph" src="images/CarCalculator-12.webp" alt="New final screen screenshot 2">
+          </div>
+        </section>
+
+      </div>
+
+      <section id="business-impact" class="project-section v2-full-only">
+        <div class="project-section-text">
+          <h2>Business impact</h2>
+          <div class="project-impact-cards">
+            <div class="project-impact-card">
+              <p class="project-impact-number">+11%</p>
+              <p class="project-impact-desc">Direct conversion. The majority of users were very satisfied with the table that allows them to compare and customize everything in one place.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">8%</p>
+              <p class="project-impact-desc">Of users booked appointments using the calendar feature. The introduction of new contact options has improved lead retention and driven higher sales closure.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">Save for later</p>
+              <p class="project-impact-desc">17% of users engaged with the Save for later feature. 4% of them converted later.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="full-flow-overview" class="project-section">
+        <div class="project-section-text">
+          <h2>Full flow overview</h2>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/CarCalculator-13.webp" alt="Full flow overview screenshot 1">
+          <img class="project-ph" src="images/CarCalculator-14.webp" alt="Full flow overview screenshot 2">
+          <img class="project-ph" src="images/CarCalculator-15.webp" alt="Full flow overview screenshot 3">
+          <img class="project-ph" src="images/CarCalculator-16.webp" alt="Full flow overview screenshot 4">
+          <img class="project-ph" src="images/CarCalculator-17.webp" alt="Full flow overview screenshot 5">
+          <img class="project-ph" src="images/CarCalculator-18.webp" alt="Full flow overview screenshot 6">
+          <img class="project-ph" src="images/CarCalculator-19.webp" alt="Full flow overview screenshot 7">
+          <img class="project-ph" src="images/CarCalculator-20.webp" alt="Full flow overview screenshot 8">
+        </div>
+      </section>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">Teamwork was essential, since there are many technical considerations to account for in a tool that generates an insurance policy. Explaining technical data in an approachable, easy way without leaving out necessary information was quite a challenge. Configuring the products to strike a balance between price and profitability required design, legal, and business to work closely together. To improve: technical explanations remain confusing; we'll keep collaborating with legal to make the product as user-friendly and understandable as possible.</p>
+      </div>
+
+      <div class="project-divider-row">
+        <p class="project-legal">Note: some data here has been adjusted for confidentiality and may not be fully exact.</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="archive.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

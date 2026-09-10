@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joaquín M. Austin — Product Designer</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Enables the browser's native cross-document view transition when
+     navigating to/from about.html (see script.js — it skips its own
+     manual fade for this specific pair so this one runs instead).
+     The sidebar/name/theme-switch are visually identical on both
+     pages, so the browser crossfades smoothly instead of flashing a
+     full reload. */
+  @view-transition {
+    navigation: auto;
+  }
+</style>
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2 page-home-v2 page-index-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="homeMobileNav">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <nav class="project-v2-toc" id="homeMobileNav" aria-label="Primary">
+        <a href="index.html" class="is-current" aria-current="page">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <section class="project-v2-overview">
+        <h2>Hello!</h2>
+        <p class="project-lead">I've been designing for twenty years across brand and product, for companies large and small. I'm currently leading B2B and complex internal tools projects. In my day-to-day work, I've embraced AI as a partner that lets me explore new ideas, prototype quickly, and bring my work closer to development like never before.</p>
+      </section>
+
+      <a href="zurich-plus.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/Zurich-Plus-00.webp" alt="Zurich Plus wellbeing app preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Zurich Insurance</p>
+            <svg class="lock-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4.5" y="9" width="11" height="8" rx="1.5" stroke-width="1.4"/>
+              <path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="project-copy">Wellbeing app that connects employers and employees.</p>
+        </div>
+      </a>
+
+      <a href="aulart.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/Aulart_00.webp" alt="Aulart project preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Aulart</p>
+          </div>
+          <p class="project-copy">Increased membership subscriptions by improving the overall user experience.</p>
+        </div>
+      </a>
+
+      <a href="zurich-falcon.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/Falcon_00.webp" alt="Falcon project preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Zurich Insurance</p>
+            <svg class="lock-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4.5" y="9" width="11" height="8" rx="1.5" stroke-width="1.4"/>
+              <path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="project-copy">B2B SaaS platform for building digital products.</p>
+        </div>
+      </a>
+
+      <a href="salucity.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/Salucity_00.webp" alt="Salucity project preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Salucity</p>
+          </div>
+          <p class="project-copy">App that connects healthcare professionals with users.</p>
+        </div>
+      </a>
+
+      <a href="zurich-car.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/CarCalculator-00.webp" alt="Zurich car insurance calculator preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Zurich Insurance</p>
+            <svg class="lock-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4.5" y="9" width="11" height="8" rx="1.5" stroke-width="1.4"/>
+              <path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="project-copy">Designed the online car insurance calculator user experience.</p>
+        </div>
+      </a>
+
+      <a href="archive.html" class="project-section home-v2-project-link">
+        <img class="project-ph-static" src="images/Archive_00.webp" alt="Archive projects preview">
+        <div class="project-section-text">
+          <div class="home-v2-project-title-row">
+            <p class="home-v2-project-title">Archive</p>
+          </div>
+          <p class="project-copy">Branding, editorial, marketing, and web projects from my early years.</p>
+        </div>
+      </a>
+
+      <p class="home-v2-footer">© 2026 - Design and code by Joaquin M. Austin using Figma + Claude</p>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

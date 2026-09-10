@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zurich Plus — Wellbeing App — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=zurich-plus.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="plusMobileToc">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="plusMobileToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#context" data-target="context">Context</a>
+          <a href="#research" data-target="research">Research</a>
+          <a href="#user-test" data-target="user-test">User test</a>
+          <a href="#outcome" data-target="outcome">Outcomes</a>
+          <a href="#conclusions" data-target="conclusions">Conclusions</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+          <p class="project-v2-short-lead">Zurich Benefits Club is a wellbeing app that connects employers and employees. With nearly half of the UK population experiencing loneliness, affecting careers, health, relationships, and overall wellbeing, the app addresses a critical gap. I led a team of three designers to develop the project from the ground up.</p>
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+        <p class="project-v2-short-lead">Zurich Benefits Club is a wellbeing app that connects employers and employees. With nearly half of the UK population experiencing loneliness, affecting careers, health, relationships, and overall wellbeing, the app addresses a critical gap. I led a team of three designers to develop the project from the ground up.</p>
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <h2 class="v2-short-only">Overview</h2>
+        <p class="project-lead v2-full-only">Zurich Benefits Club is a wellbeing app that connects employers and employees. With nearly half of the UK population experiencing loneliness, affecting careers, health, relationships, and overall wellbeing, the app addresses a critical gap. I led a team of three designers to develop the project from the ground up.</p>
+        <img class="project-ph" src="images/Zurich-Plus-01.webp" alt="Zurich Plus intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Lead Product Designer</p>
+          <p>Year<br>Ongoing since 2023</p>
+        </div>
+      </section>
+
+      <section id="context" class="project-section">
+        <div class="project-section-text">
+          <h2>Context</h2>
+          <p class="project-copy v2-full-only">Loneliness hinders employee progress towards their goals in addition to barriers they already face like multiple competing priorities and fear/shame of being judged. Most well-being apps, which are typically paid, target specific issues or activities and require prior motivation to even begin.</p>
+        </div>
+        <img class="project-ph" src="images/Zurich-Plus-02.webp" alt="Context screenshot">
+      </section>
+
+      <section id="research" class="project-section-text v2-full-only">
+        <h2>Key insights from research</h2>
+        <div class="project-impact-cards">
+          <div class="project-impact-card">
+            <p class="project-impact-number">71%</p>
+            <p class="project-impact-desc">Of UK employees need to find meaning &amp; fulfillment in their professional lives meanwhile 31% have difficulty changing the course of events that affect them.</p>
+          </div>
+          <div class="project-impact-card">
+            <p class="project-impact-number">85%</p>
+            <p class="project-impact-desc">Of UK employees goals were focused on finances + retirement &amp; lifestyle + material.</p>
+          </div>
+          <div class="project-impact-card">
+            <p class="project-impact-number">£2.5B</p>
+            <p class="project-impact-desc">From an employer perspective loneliness costs £2.5B annually through turnover, reduced productivity, and absenteeism.</p>
+          </div>
+          <div class="project-impact-card">
+            <p class="project-impact-number">Goals</p>
+            <p class="project-impact-desc">Feeling happy &amp; at ease with oneself is perceived as the most difficult goal to achieve, with the longest time horizon.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="user-test" class="project-section">
+        <div class="project-section-text">
+          <h2>Concepts testing</h2>
+          <p class="project-copy v2-full-only">We designed two related but distinct concepts: one focused on personal life achievements and the other on financial milestones.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/Zurich-Plus-03.webp" alt="Concepts testing screenshot 1">
+          <img class="project-ph" src="images/Zurich-Plus-04.webp" alt="Concepts testing screenshot 2">
+        </div>
+      </section>
+
+      <div id="outcome" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Benefits and Goals</h2>
+            <p class="project-copy v2-full-only">For the MVP, we prioritized two key functionalities: Benefits, designed to support mental health, and Goals, designed to help users set and achieve realistic objectives. This feature connects users with trusted resources and services that provide guidance, emotional support, and professional help.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/Zurich-Plus-05.webp" alt="Benefits and Goals screenshot 1">
+            <img class="project-ph" src="images/Zurich-Plus-06.webp" alt="Benefits and Goals screenshot 2">
+            <img class="project-ph" src="images/Zurich-Plus-07.webp" alt="Benefits and Goals screenshot 3">
+            <img class="project-ph" src="images/Zurich-Plus-08.webp" alt="Benefits and Goals screenshot 4">
+            <img class="project-ph" src="images/Zurich-Plus-09.webp" alt="Benefits and Goals screenshot 5">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Carbon footprint calculator</h2>
+            <p class="project-copy v2-full-only">By answering a few simple questions about energy use, transportation, and lifestyle habits, users receive a clear estimate of their carbon footprint, expressed in CO₂ equivalents.</p>
+          </div>
+          <img class="project-ph" src="images/Zurich-Plus-10.webp" alt="Carbon footprint calculator screenshot">
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Points</h2>
+            <p class="project-copy v2-full-only">Users earn points by completing activities and making responsible choices within the platform. These points can be collected over time and redeemed for vouchers, offering real, tangible benefits from trusted partner brands.</p>
+          </div>
+          <img class="project-ph" src="images/Zurich-Plus-11.webp" alt="Points screenshot">
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Quizzes</h2>
+            <p class="project-copy v2-full-only">Through short and dynamic quizzes, users can test their knowledge, discover new insights, and reinforce key concepts in an enjoyable way.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/Zurich-Plus-12.webp" alt="Quizzes screenshot 1">
+            <img class="project-ph" src="images/Zurich-Plus-13.webp" alt="Quizzes screenshot 2">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Lifestyle profile</h2>
+            <p class="project-copy v2-full-only">Allows users to share key information about their habits, preferences, and routines. By uploading their lifestyle profile, users help personalize their experience across the platform.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/Zurich-Plus-14.webp" alt="Lifestyle profile screenshot 1">
+            <img class="project-ph" src="images/Zurich-Plus-15.webp" alt="Lifestyle profile screenshot 2">
+          </div>
+        </section>
+
+      </div>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">Working on an app that aims to help users with sensitive topics like mental health or lack of motivation has been truly rewarding. The research process, carried out together with a specialized agency, gave us an impressive amount of information — things we didn't even know were happening in society. Working as a team alongside business and clients was key to approaching sensitive topics in a warm, positive way.</p>
+      </div>
+
+      <div class="project-divider-row">
+        <p class="project-legal">Note: some data here has been adjusted for confidentiality and may not be fully exact.</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="aulart.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

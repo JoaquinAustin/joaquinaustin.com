@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Joaquín M. Austin</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Enables the browser's native cross-document view transition when
+     navigating to/from index.html (see script.js — it skips its own
+     manual fade for this specific pair so this one runs instead).
+     The sidebar/name/theme-switch are visually identical on both
+     pages, so the browser crossfades smoothly instead of flashing a
+     full reload. */
+  @view-transition {
+    navigation: auto;
+  }
+</style>
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2 page-home-v2 page-about-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="aboutMobileNav">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <nav class="project-v2-toc" id="aboutMobileNav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html" class="is-current" aria-current="page">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <section class="project-v2-overview">
+        <p class="project-lead">My journey with design began twenty years ago. In my early years, I worked in branding, marketing and web design, across all kinds of projects. The evolution of technology and my constant curiosity allowed me to evolve toward product design, focusing more and more on the needs of users and the business, working across both B2C and B2B projects.</p>
+        <p class="project-lead">I've worked as a freelancer, for startups, agencies, and companies both large and small. This diversity of contexts, together with the luck of having collaborated with incredibly talented people, has given me what I consider a holistic view of design.</p>
+      </section>
+
+      <section class="project-section-text about-ai-section">
+        <h2>About AI</h2>
+        <p class="project-lead">What an exciting time to be a designer! AI isn't just a simple upgrade to what we already have, it's a completely different, revolutionary leap. In my day-to-day work, I use it to analyze data, extract metrics, gather insights, look for inspiration, put together quick prototypes, implement pixel-perfect designs, and strengthen the connection between design and development.</p>
+      </section>
+
+      <section class="project-section-text about-closing-section">
+        <p class="project-lead">Simple, useful and well made are my core design values I work with and support every day.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
