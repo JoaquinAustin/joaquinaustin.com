@@ -114,6 +114,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openLightbox = (sourceEl) => {
       content.innerHTML = "";
+      if (sourceEl.tagName === "VIDEO") {
+        const clone = document.createElement("video");
+        clone.src = sourceEl.currentSrc || sourceEl.querySelector("source")?.src || "";
+        clone.autoplay = true;
+        clone.muted = true;
+        clone.loop = true;
+        clone.playsInline = true;
+        content.appendChild(clone);
+        lightbox.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        return;
+      }
       const img = sourceEl.tagName === "IMG" ? sourceEl : sourceEl.querySelector("img");
       if (img && img.src) {
         const clone = document.createElement("img");
@@ -324,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // navigation — and so the page's normal fade-out-on-click handling
   // (below) picks up the right destination without any special-casing.
   document.querySelectorAll(".home-v2-project-link").forEach((link) => {
-    if (!link.querySelector(".lock-icon")) return;
+    if (!link.querySelector(".locked-tag")) return;
     let alreadyUnlocked = false;
     try {
       alreadyUnlocked = sessionStorage.getItem("projectUnlocked") === "true";

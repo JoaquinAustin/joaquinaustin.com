@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodvibes App — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=good-vibes.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="goodvibesMobileNav">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="goodvibesToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#the-idea" data-target="the-idea">The idea</a>
+          <a href="#how-it-works" data-target="how-it-works">How it works</a>
+          <a href="#visual-style" data-target="visual-style">Look and feel</a>
+          <a href="#vibe-mascot" data-target="vibe-mascot">'Vibe', the app mascot</a>
+          <a href="#earth-theme" data-target="earth-theme">Earth theme</a>
+          <a href="#conclusions" data-target="conclusions">Conclusions</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" id="goodvibesMobileNav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <p class="project-lead v2-full-only">Goodvibes is an iOS app I built myself using Claude. The goal of the app is to send and receive good vibes (positive messages) in a simple, anonymous, and selfless way.</p>
+        <img class="project-ph" src="images/Goodvibes_03.webp" alt="Goodvibes intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Owner</p>
+          <p>Year<br>2026</p>
+        </div>
+      </section>
+
+      <section id="the-idea" class="project-section-text v2-full-only">
+        <h2>The idea</h2>
+        <p class="project-copy v2-full-only">A stranger looked me in the eye and said, "It was going to rain, but it's all sun — one way or another, it's a beautiful day." No context, no conversation before it. Just a stranger's kindness. That stuck with me, and it became the idea for an app that does exactly that: passes positive messages between strangers, just to bring a smile to someone's day.</p>
+      </section>
+
+      <div id="how-it-works" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Sending vibes</h2>
+            <p class="project-copy v2-full-only">Easy. Simple. Fast. Write a good vibe, send it off, and it reaches a stranger, someone who speaks your language and is waiting for one. No sign-up, nothing saved, nothing tracked. Ephemeral and spontaneous.</p>
+          </div>
+          <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+            <source src="images/Goodvibes_01.mp4" type="video/mp4">
+          </video>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Getting vibes</h2>
+            <p class="project-copy v2-full-only">When you want to receive a good vibe, simply click the GET button and an anonymous message will reach you instantly.</p>
+          </div>
+          <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+            <source src="images/Goodvibes_02.mp4" type="video/mp4">
+          </video>
+        </section>
+
+      </div>
+
+      <section id="visual-style" class="project-section">
+        <div class="project-section-text">
+          <h2>Look and feel</h2>
+          <p class="project-copy v2-full-only">A simple, easy-to-use design with quality details bring the app to life. Minimal, with a touch of warmth. The mix of contrasting typefaces, soft colors, and one bolder accent color give the UI its character.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/Goodvibes_04.webp" alt="Look and feel screenshot 1">
+          <img class="project-ph" src="images/Goodvibes_05.webp" alt="Look and feel screenshot 2">
+          <img class="project-ph" src="images/Goodvibes_06.webp" alt="Look and feel screenshot 3">
+          <img class="project-ph" src="images/Goodvibes_07.webp" alt="Look and feel screenshot 4">
+          <img class="project-ph" src="images/Goodvibes_08.webp" alt="Look and feel screenshot 5">
+        </div>
+      </section>
+
+      <section id="vibe-mascot" class="project-section">
+        <div class="project-section-text">
+          <h2>'Vibe', the app mascot</h2>
+          <p class="project-copy v2-full-only">The idea was to give the app a touch of color while keeping its essential simplicity. That touch had to be small — a detail, not something that steals the spotlight. After several rounds of iteration, I kept simplifying until I landed on a friendly, continuous, unmistakable geometric shape: the circle. Vibe is a living component that follows the user through their different actions.</p>
+        </div>
+        <div class="project-ph-stack">
+          <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+            <source src="images/Goodvibes_09.mp4" type="video/mp4">
+          </video>
+          <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+            <source src="images/Goodvibes_10.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section>
+
+      <section id="earth-theme" class="project-section">
+        <div class="project-section-text">
+          <h2>Earth theme</h2>
+          <p class="project-copy v2-full-only">To go along with the familiar light and dark themes, I designed a third one: Earth. A subtle blend of jungle colors, paired with a soft, randomized rain effect, makes this view a relaxed alternative that conveys peace and nature.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/Goodvibes_11.webp" alt="Earth theme screenshot 1">
+          <img class="project-ph" src="images/Goodvibes_12.webp" alt="Earth theme screenshot 2">
+        </div>
+      </section>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">This project has been (and still is, since I'm still iterating on it) a genuine satisfaction. Being able to design an idea and turn it into a real product is something that, a few years ago, would have been unthinkable. AI is a powerful thing that's changing how we communicate and work. It doesn't replace teamwork or contact with colleagues and other professionals, something I consider essential to both professional and personal success, but putting it to the test and seeing its limits has been a lot of fun!</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="zurich-plus.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

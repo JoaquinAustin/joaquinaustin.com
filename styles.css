@@ -254,16 +254,9 @@ body[data-theme="earth"] {
   object-fit: cover;
 }
 
-.project-ph:hover {
-  opacity: .85;
-}
-
 @media (max-width: 640px) {
   .project-ph {
     cursor: default;
-  }
-  .project-ph:hover {
-    opacity: 1;
   }
 }
 
@@ -421,7 +414,8 @@ body[data-theme="earth"] {
   transform: scale(1);
 }
 
-.joa-lightbox-content img {
+.joa-lightbox-content img,
+.joa-lightbox-content video {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -432,7 +426,8 @@ body[data-theme="earth"] {
    in the enlarged lightbox view instead of the default 16px, which
    reads as noticeably more rounded once the image is blown up. */
 .joa-lightbox--v2 .joa-lightbox-content,
-.joa-lightbox--v2 .joa-lightbox-content img {
+.joa-lightbox--v2 .joa-lightbox-content img,
+.joa-lightbox--v2 .joa-lightbox-content video {
   border-radius: 4px;
 }
 
@@ -867,6 +862,14 @@ main.wrap.page-project-v2 {
   flex-direction: column;
 }
 
+/* Home specifically: narrower content column matching the project
+   thumbnail width (600px) instead of the shared 720px — otherwise
+   each project card's clickable <a> (width:100% via .project-section)
+   stretches past the thumb/text into empty space on the right. */
+.page-index-v2 .project-v2-content {
+  max-width: 600px;
+}
+
 .project-v2-content > * {
   margin-bottom: 80px;
 }
@@ -1298,6 +1301,7 @@ body.gap-short .project-v2-content .project-section {
   transition: opacity .15s ease;
 }
 
+
 .home-v2-project-link {
   display: flex;
   flex-direction: column;
@@ -1320,15 +1324,18 @@ body.gap-short .project-v2-content .project-section {
   margin-bottom: 72px; /* last project -> footer note */
 }
 
-.home-v2-project-link:hover .project-ph-static {
-  opacity: .85;
-}
-
 .project-v2-content .home-v2-project-link .project-section-text {
   gap: 4px;
 }
 
 .home-v2-project-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.home-v2-project-tags {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1342,9 +1349,17 @@ body.gap-short .project-v2-content .project-section {
   margin: 0;
 }
 
-.home-v2-project-title-row .lock-icon {
-  margin-top: -2px;
-  stroke: var(--home-muted);
+.locked-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #E5E5E5;
+  color: #000000;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
 }
 
 /* Footer note: margin-bottom on the last .home-v2-project-link
@@ -1356,11 +1371,48 @@ body.gap-short .project-v2-content .project-section {
   color: var(--home-muted);
 }
 
-.lock-icon {
-  width: 16px;
-  height: 16px;
+.ai-lab-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #8B8F98;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
   flex-shrink: 0;
-  stroke: currentColor;
+}
+
+.home-v2-project-video-wrap {
+  position: relative;
+}
+
+.ai-lab-tag--overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.ai-lab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  flex-shrink: 0;
+  animation: ai-lab-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes ai-lab-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-lab-dot {
+    animation: none;
+  }
 }
 
 /* About page: pull "About AI" closer to the intro block above it
