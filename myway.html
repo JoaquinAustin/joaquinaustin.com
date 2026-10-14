@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyWay App — Car Insurance — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=myway.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mywayMobileToc">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="mywayMobileToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#context" data-target="context">Context</a>
+          <a href="#outcome" data-target="outcome">Outcomes</a>
+          <a href="#business-impact" data-target="business-impact">Business impact</a>
+          <a href="#conclusions" data-target="conclusions">Conclusion</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+          <p class="project-v2-short-lead">MyWay is Zurich’s pay-as-you-drive car insurance for people who don’t drive every day, or who have a second car. I led the redesign of the app, used by thousands of users in Switzerland.</p>
+          <div class="project-v2-short-stats">
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">89%</p>
+              <p class="project-v2-short-stat-desc">Satisfaction</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">+11%</p>
+              <p class="project-v2-short-stat-desc">In sales</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">13%</p>
+              <p class="project-v2-short-stat-desc">Fewer support requests</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+        <p class="project-v2-short-lead">MyWay is Zurich’s pay-as-you-drive car insurance for people who don’t drive every day, or who have a second car. I led the redesign of the app, used by thousands of users in Switzerland.</p>
+        <div class="project-v2-short-stats">
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">89%</p>
+              <p class="project-v2-short-stat-desc">Satisfaction</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">+11%</p>
+              <p class="project-v2-short-stat-desc">In sales</p>
+            </div>
+            <div class="project-v2-short-stat">
+              <p class="project-v2-short-stat-title">13%</p>
+              <p class="project-v2-short-stat-desc">Fewer support requests</p>
+            </div>
+          </div>
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <p class="project-lead v2-full-only">MyWay is Zurich’s pay-as-you-drive car insurance for people who don’t drive every day, or who have a second car. I led the redesign of the app, used by thousands of users in Switzerland.</p>
+        <img class="project-ph" src="images/MyWay_01.webp" alt="MyWay intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Lead Product Designer</p>
+          <p>Year<br>2026</p>
+        </div>
+      </section>
+
+      <section id="context" class="project-section-text v2-full-only">
+        <h2>Context</h2>
+        <p class="project-copy">MyWay users pay for how much they drive. A device plugged into the car tracks the kilometers driven and calculates the variable cost the user pays. Both the device and the mobile app were outsourced to a third party. This dependency kept Zurich from evolving the product or offering personalized service and support to its users.</p>
+      </section>
+
+      <div id="outcome" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Designed and owned 100% by Zurich</h2>
+            <p class="project-copy v2-full-only">With full control over the app, the design is now aligned with our design system, brand guidelines and brand values.</p>
+          </div>
+          <img class="project-ph" src="images/MyWay_02.webp" alt="Onboarding and MyWay overview screens">
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>A map for the road ahead</h2>
+            <p class="project-copy v2-full-only">The map doesn’t just help users find their car: it also lets them search for charging stations, gas stations and roadside assistance. The goal isn’t to replace the navigation app users already rely on. Instead, it integrates with Google Maps and Apple Maps, so users can start in our app and hand off the route to their preferred one.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/MyWay_03.webp" alt="Map, filters and charging station screens">
+            <img class="project-ph" src="images/MyWay_04.webp" alt="Roadside assistance screen">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/MyWay_05.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Clear metrics for better driving</h2>
+            <p class="project-copy v2-full-only">The app analyzes how you drive and tracks your CO2 emissions. An easy-to-read section, quick to access, shows your driving style: how you brake, accelerate and take corners. Tips and recommendations help you drive more efficiently.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/MyWay_06.webp" alt="Driving statistics screens">
+            <img class="project-ph" src="images/MyWay_07.webp" alt="Trips and trip detail screens">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/MyWay_08.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Clear costs, clear kilometers</h2>
+            <p class="project-copy v2-full-only">This section gives users a clear, fully transparent view of the kilometers they’ve driven and how they affect the cost of the service. At any moment, users know exactly how much their next bill will be.</p>
+          </div>
+          <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+            <source src="images/MyWay_09.mp4" type="video/mp4">
+          </video>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Your profile, your car, your way</h2>
+            <p class="project-copy v2-full-only">From their profile, users can access all the information about their car and their policy. If they want, the app can also keep them informed about the services the car needs.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/MyWay_10.webp" alt="Profile and car details screens">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/MyWay_11.mp4" type="video/mp4">
+            </video>
+            <img class="project-ph" src="images/MyWay_12.webp" alt="Oil change screen">
+          </div>
+        </section>
+
+      </div>
+
+      <section id="business-impact" class="project-section v2-full-only">
+        <div class="project-section-text">
+          <h2>Business impact</h2>
+          <div class="project-impact-cards">
+            <div class="project-impact-card">
+              <p class="project-impact-number">89% Satisfaction</p>
+              <p class="project-impact-desc">Most users find the new app far more intuitive and personalized.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">+11% in sales</p>
+              <p class="project-impact-desc">Promotion and integration with other Zurich products have boosted sales.</p>
+            </div>
+            <div class="project-impact-card">
+              <p class="project-impact-number">13% fewer support requests</p>
+              <p class="project-impact-desc">Clearer kilometers driven and dynamic billing have helped reduce user inquiries.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">Redesigning an existing product from scratch was both challenging and deeply rewarding. Access to so much data and user feedback was key to focusing our efforts in the right direction. And the opportunity ahead is clear: the market for small second cars and electric vehicles keeps growing, and more and more users are looking for a fair price.</p>
+      </div>
+
+      <div class="project-divider-row">
+        <p class="project-legal">Note: some data here has been adjusted for confidentiality and may not be fully exact.</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="aulart.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
