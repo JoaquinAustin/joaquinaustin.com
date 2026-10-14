@@ -1339,6 +1339,8 @@ body.gap-short .project-v2-content .project-section {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  top: -4px; /* tag sits 8px from the copy, title stays at 4px */
 }
 
 .home-v2-project-title {
@@ -1352,8 +1354,8 @@ body.gap-short .project-v2-content .project-section {
 .locked-tag {
   display: inline-flex;
   align-items: center;
-  background: #E5E5E5;
-  color: #000000;
+  background: #F1F2F6;
+  color: #5A5E67;
   font-size: 12px;
   line-height: 1;
   font-weight: 500;
@@ -1395,25 +1397,6 @@ body.gap-short .project-v2-content .project-section {
   left: 12px;
 }
 
-.ai-lab-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-  flex-shrink: 0;
-  animation: ai-lab-blink 1.6s ease-in-out infinite;
-}
-
-@keyframes ai-lab-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .25; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ai-lab-dot {
-    animation: none;
-  }
-}
 
 /* About page: pull "About AI" closer to the intro block above it
    (48px instead of the default 80px content gap). */
