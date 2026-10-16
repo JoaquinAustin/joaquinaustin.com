@@ -1354,7 +1354,7 @@ body.gap-short .project-v2-content .project-section {
 .locked-tag {
   display: inline-flex;
   align-items: center;
-  background: #F1F2F6;
+  background: #F5F5F5;
   color: #5A5E67;
   font-size: 12px;
   line-height: 1;
@@ -1608,4 +1608,31 @@ body.menu-open {
     padding: 8px 12px;
     border-radius: 8px;
   }
+}
+
+/* Goodvibes title: AI sparkle in place of the "|" separator */
+.title-ai-icon {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0 0.2em;
+  vertical-align: -0.2em;
+  color: #A78BFA;
+  transform-origin: 50% 50%;
+  animation: title-ai-twinkle 3.2s ease-in-out infinite;
+}
+.title-ai-icon .spark-small {
+  transform-origin: 82% 18%;
+  animation: title-ai-twinkle-small 3.2s ease-in-out infinite;
+}
+@keyframes title-ai-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(12deg); }
+}
+@keyframes title-ai-twinkle-small {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .title-ai-icon, .title-ai-icon .spark-small { animation: none; }
 }
