@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IQ Suite | Program IQ &amp; Policy IQ — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=iq-suite.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mywayMobileToc">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="mywayMobileToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#context" data-target="context">Context</a>
+          <a href="#research" data-target="research">Research</a>
+          <a href="#solutions" data-target="solutions">Finding solutions</a>
+          <a href="#outcome" data-target="outcome">Outcomes</a>
+          <a href="#business-impact" data-target="business-impact">Business impact</a>
+          <a href="#conclusions" data-target="conclusions">Conclusion</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+          <p class="project-v2-short-lead">IQ Suite is an AI-powered B2B SaaS platform that lets Zurich analyze policies and detect discrepancies between them. This helps the team get ahead of errors that can cause friction with large accounts and significant financial losses.</p>
+          <div class="project-v2-short-stats"><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">$1.5M</p><p class="project-v2-short-stat-desc">In discrepancies detected across 11 countries</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+159%</p><p class="project-v2-short-stat-desc">Policies analyzed compared to 2025</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">40%</p><p class="project-v2-short-stat-desc">Less time analyzing documents</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">17%</p><p class="project-v2-short-stat-desc">Fewer meetings with dashboard and platform data at hand</p></div></div>
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+        <p class="project-v2-short-lead">IQ Suite is an AI-powered B2B SaaS platform that lets Zurich analyze policies and detect discrepancies between them. This helps the team get ahead of errors that can cause friction with large accounts and significant financial losses.</p>
+        <div class="project-v2-short-stats"><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">$1.5M</p><p class="project-v2-short-stat-desc">In discrepancies detected across 11 countries</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+159%</p><p class="project-v2-short-stat-desc">Policies analyzed compared to 2025</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">40%</p><p class="project-v2-short-stat-desc">Less time analyzing documents</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">17%</p><p class="project-v2-short-stat-desc">Fewer meetings with dashboard and platform data at hand</p></div></div>
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <p class="project-lead v2-full-only">IQ Suite is an AI-powered B2B SaaS platform that lets Zurich analyze policies and detect discrepancies between them. This helps the team get ahead of errors that can cause friction with large accounts and significant financial losses.</p>
+        <img class="project-ph" src="images/IQ-01.webp" alt="IQ Suite intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Lead Product Designer</p>
+          <p>Year<br>2026</p>
+        </div>
+      </section>
+
+      <section id="context" class="project-section-text v2-full-only">
+        <h2>Context</h2>
+        <p class="project-copy">Today, analyzing insurance policies to find inconsistencies and discrepancies is a manual process. Each country has built its own workflow for these tasks. This leaves the company without a consistent approach and creates a lot of manual work that carries unintentional errors. The high volume also makes analyses slow, so teams have to choose which accounts to analyze and which to skip because they lack the time and resources.</p>
+      </section>
+
+      <section id="discrepancy" class="project-section-text v2-full-only">
+        <h2>What is a discrepancy?</h2>
+        <p class="project-copy">A discrepancy happens when a Master Policy has parameters that don’t match a Local Policy. Large accounts that operate in several countries have a Master Policy that sets the basis of the insurance and its coverages. Each country where the company operates then has its own Local Policy, with variations based on local regulations and economic values. Fire coverage in Los Angeles, USA is not the same as in Bilbao, Spain.</p>
+      </section>
+
+      <section id="research" class="project-section v2-full-only">
+        <div class="project-section-text">
+          <h2>Understanding users</h2>
+          <p class="project-copy">The research process was the foundation for understanding how different countries run these analyses, what processes and tools they use, and what problems come up.</p>
+          <div class="project-impact-cards">
+            <div class="project-impact-card"><p class="project-impact-number">79%</p><p class="project-impact-desc">Of users believe they need a tool that speeds up analysis and catches errors before renewals.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">98%</p><p class="project-impact-desc">Say the current methods are manual and they rely on unfriendly tools like Excel and PowerPoint.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">91%</p><p class="project-impact-desc">Of managers agree that, without automation, they have to choose which accounts to analyze and which to skip.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" class="project-section">
+        <div class="project-section-text">
+          <h2>Finding solutions</h2>
+          <p class="project-copy v2-full-only">We designed structural flows to present to users and understand where they see value and where they don’t. The use of AI was well received. Most agree they wouldn’t trust it 100% and that a human check is necessary. They also agree that AI finds details the human eye misses.</p>
+        </div>
+        <div class="project-ph-stack">
+            <img class="project-ph" src="images/IQ-02.webp" alt="Structural flow">
+            <img class="project-ph" src="images/IQ-03.webp" alt="Structural flow">
+            <img class="project-ph" src="images/IQ-04.webp" alt="Structural flow">
+            <img class="project-ph" src="images/IQ-05.webp" alt="Structural flow">
+          </div>
+      </section>
+
+      <div id="outcome" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Comparing wordings between two documents</h2>
+            <p class="project-copy v2-full-only">One of the most requested tools, and ideal for policy renewals. The system analyzes the current policy and the upcoming one, looking for differences in legal content. The AI detects new content (added), removed content (removed) and different content (changed).</p>
+          </div>
+          <img class="project-ph" src="images/IQ-06.webp" alt="Wordings comparison">
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>AI validation and comments</h2>
+            <p class="project-copy v2-full-only">To train the AI, we added thumbs so users can simply say whether a finding is OK or not. This way the platform can learn and become more accurate over time. Users can also leave comments to help improve the results in the future.</p>
+          </div>
+          <div class="project-ph-stack">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/IQ-07.mp4" type="video/mp4">
+            </video>
+            <img class="project-ph" src="images/IQ-08.webp" alt="AI validation and comments">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Comparing multiple documents</h2>
+            <p class="project-copy v2-full-only">Users often have to compare several Local policies against one Master. In that case, the platform generates a findings table where they can quickly see the differences between documents. An overall rating ranks the differences, so users can work based on the urgency of each case.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/IQ-09.webp" alt="Findings table">
+            <img class="project-ph" src="images/IQ-10.webp" alt="Findings table">
+            <img class="project-ph" src="images/IQ-11.webp" alt="Findings table">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Limits tracker</h2>
+            <p class="project-copy v2-full-only">This section focuses entirely on monetary limit differences. For example, a Master might say that $1 million is covered in case of flood, while a local policy sets a higher limit. When this happens and a claim occurs, more money is paid out than should be. To catch these discrepancies, we designed a feature dedicated entirely to finding and resolving financial differences.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/IQ-12.webp" alt="Limits tracker">
+            <img class="project-ph" src="images/IQ-13.webp" alt="Limits tracker">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/IQ-14.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>A solution for every level of user</h2>
+            <p class="project-copy v2-full-only">IQ Suite will be used at the technical level by those who build policies, but also by managers and senior stakeholders. To give each user the information they need, we created different dashboards where the information varies based on what each user needs to know.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/IQ-15.webp" alt="Dashboard">
+            <img class="project-ph" src="images/IQ-16.webp" alt="Dashboard">
+            <img class="project-ph" src="images/IQ-17.webp" alt="Dashboard">
+          </div>
+        </section>
+
+      </div>
+
+      <section id="business-impact" class="project-section v2-full-only">
+        <div class="project-section-text">
+          <h2>Business impact</h2>
+          <div class="project-impact-cards">
+            <div class="project-impact-card"><p class="project-impact-number">$1.5M</p><p class="project-impact-desc">In discrepancies detected across 11 countries.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">+159%</p><p class="project-impact-desc">Policies analyzed compared to 2025.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">40%</p><p class="project-impact-desc">Less time analyzing documents.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">17%</p><p class="project-impact-desc">Fewer meetings with dashboard and platform data at hand</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">Designing this platform wasn’t just a design challenge, but a challenge of logic and business needs. The data being compared is sensitive on one hand and highly technical on the other, and it affects high-level financial results. Creating a workflow and a dedicated tool to replace slow, manual methods has been very rewarding. Seeing users adopt new ways of working and do their jobs better is gratifying. Challenges remain: the AI doesn’t analyze everything perfectly, and different languages and legal terms are hard to handle. False positives create distrust among users and erode their confidence in the tool. We’re working to polish this as much as possible, and fortunately users are positive and collaborative.</p>
+      </div>
+
+      <div class="project-divider-row">
+        <p class="project-legal">Note: some data here has been adjusted for confidentiality and may not be fully exact.</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="myway.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
