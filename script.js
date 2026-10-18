@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clone.loop = true;
         clone.playsInline = true;
         content.appendChild(clone);
+        if (window.joaAddVideoToggle) window.joaAddVideoToggle(clone, content);
         lightbox.classList.add("is-open");
         document.body.style.overflow = "hidden";
         return;
@@ -446,3 +447,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 160);
   });
 });
+
+// ---- Pause / play button on case-study videos (WCAG 2.2.2) ----
+// Videos still autoplay muted and loop by default; the button lets anyone
+// pause them, and switches to a play icon while paused. Also used by the
+// lightbox for the enlarged video.
+(function () {
+  const ICON_PAUSE =
+    '<svg width="10" height="10" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2.5" y="1.5" width="3" height="11" rx="1"/><rect x="8.5" y="1.5" width="3" height="11" rx="1"/></svg>';
+  const ICON_PLAY =
+    '<svg width="10" height="10" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3.5 1.8v10.4a.6.6 0 0 0 .92.5l8.1-5.2a.6.6 0 0 0 0-1L4.42 1.3a.6.6 0 0 0-.92.5z"/></svg>';
+
+  const addToggle = (video, container) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "video-toggle";
+    container.appendChild(btn);
+    const sync = () => {
+      const paused = video.paused;
+      btn.innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
+      btn.setAttribute("aria-label", paused ? "Play video" : "Pause video");
+    };
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
+    });
+    video.addEventListener("play", sync);
+    video.addEventListener("pause", sync);
+    sync();
+  };
+  window.joaAddVideoToggle = addToggle;
+
+  const init = () => {
+    document.querySelectorAll("video.project-ph-video").forEach((video) => {
+      if (video.parentElement.classList.contains("video-wrap")) return;
+      const wrap = document.createElement("div");
+      wrap.className = "video-wrap";
+      video.parentNode.insertBefore(wrap, video);
+      wrap.appendChild(video);
+      addToggle(video, wrap);
+    });
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

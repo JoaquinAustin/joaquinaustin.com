@@ -1636,3 +1636,32 @@ body.menu-open {
 @media (prefers-reduced-motion: reduce) {
   .title-ai-icon, .title-ai-icon .spark-small { animation: none; }
 }
+
+/* Pause / play button on case-study videos (and the enlarged lightbox video) */
+.video-wrap {
+  position: relative;
+  width: 100%;
+}
+.joa-lightbox-content { position: relative; }
+.video-toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(16, 16, 16, 0.28);
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  opacity: .85;
+  transition: background .15s ease, opacity .15s ease;
+}
+.video-toggle:hover { background: rgba(16, 16, 16, 0.55); opacity: 1; }
+.video-toggle:focus-visible { opacity: 1; outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 4px #101010; }
