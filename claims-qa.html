@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claims QA | Automated QA — Joaquín M. Austin</title>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("projectUnlocked") !== "true") {
+        window.location.replace("project-password.html?next=claims-qa.html");
+      }
+    } catch (e) {
+      /* if sessionStorage is unavailable, let the page load normally */
+    }
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+<script>
+  try {
+    var savedTheme = localStorage.getItem("joa-theme");
+    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<main class="wrap page-project-v2">
+  <div class="project-v2-layout">
+
+    <aside class="project-v2-sidebar">
+      <p class="project-v2-name"><a href="index.html">Joaquín M. Austin<span class="project-v2-name-role">—Designer</span></a></p>
+      <button type="button" class="project-v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mywayMobileToc">
+        <span class="project-v2-menu-line"></span>
+        <span class="project-v2-menu-line"></span>
+      </button>
+      <div class="project-v2-nav-group">
+        <div class="project-v2-switch">
+          <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+          <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+        </div>
+        <nav class="project-v2-toc v2-full-only" id="mywayMobileToc" aria-label="Sections">
+          <a href="#overview" data-target="overview" class="is-current">Overview</a>
+          <a href="#context" data-target="context">Context</a>
+          <a href="#research" data-target="research">Research</a>
+          <a href="#prototypes" data-target="prototypes">Vibe coding and prototypes</a>
+          <a href="#outcome" data-target="outcome">Outcomes</a>
+          <a href="#business-impact" data-target="business-impact">Business impact</a>
+          <a href="#conclusions" data-target="conclusions">Conclusion</a>
+        </nav>
+        <div class="project-v2-short-summary v2-short-only">
+          <p class="project-v2-short-lead">Claims QA is an AI-powered B2B SaaS platform that helps Zurich detect incorrect payments on customer claims. Thanks to AI, the analysis has been significantly optimized and very high amounts in need of correction have been identified. I led the product design together with the Product Owner, and we continue to iterate constantly.</p>
+          <div class="project-v2-short-stats"><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+$2.1M</p><p class="project-v2-short-stat-desc">Detected in incorrect or out-of-range payments in the UK alone between 2022 and 2026</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+215%</p><p class="project-v2-short-stat-desc">Cases analyzed in search of discrepancies, compared to 2025</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">73%</p><p class="project-v2-short-stat-desc">Of users have adopted the platform in its beta version</p></div></div>
+        </div>
+      </div>
+      <nav class="project-v2-mobile-nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/jmaustin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="mailto:joaquinmaustin@gmail.com">Email</a>
+      </nav>
+      <nav class="theme-switch" aria-label="Theme">
+        <button type="button" aria-current="true" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="earth">Earth</button>
+      </nav>
+    </aside>
+
+    <div class="project-v2-content">
+
+      <div class="project-v2-switch project-v2-switch-mobile">
+        <button type="button" class="project-v2-switch-active" data-mode="full">Full Case</button>
+        <a href="#" class="project-v2-switch-inactive" data-mode="short">Keep it short</a>
+      </div>
+
+      <div class="project-v2-mobile-short-summary v2-short-only">
+        <p class="project-v2-short-lead">Claims QA is an AI-powered B2B SaaS platform that helps Zurich detect incorrect payments on customer claims. Thanks to AI, the analysis has been significantly optimized and very high amounts in need of correction have been identified. I led the product design together with the Product Owner, and we continue to iterate constantly.</p>
+        <div class="project-v2-short-stats"><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+$2.1M</p><p class="project-v2-short-stat-desc">Detected in incorrect or out-of-range payments in the UK alone between 2022 and 2026</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">+215%</p><p class="project-v2-short-stat-desc">Cases analyzed in search of discrepancies, compared to 2025</p></div><div class="project-v2-short-stat"><p class="project-v2-short-stat-title">73%</p><p class="project-v2-short-stat-desc">Of users have adopted the platform in its beta version</p></div></div>
+      </div>
+
+      <section id="overview" class="project-v2-overview">
+        <p class="project-lead v2-full-only">Claims QA is an AI-powered B2B SaaS platform that helps Zurich detect incorrect payments on customer claims. Thanks to AI, the analysis has been significantly optimized and very high amounts in need of correction have been identified. I led the product design together with the Product Owner, and we continue to iterate constantly.</p>
+        <img class="project-ph" src="images/QA-01.webp" alt="Claims QA intro screenshot">
+        <div class="project-meta v2-full-only">
+          <p>Role<br>Lead Product Designer</p>
+          <p>Year<br>2026</p>
+        </div>
+      </section>
+
+      <section id="context" class="project-section-text v2-full-only">
+        <h2>Context</h2>
+        <p class="project-copy">Every day, claims occur where the company has to cover expenses and make payments to its customers and partners. It is very common for payments to be made that are not due, or far higher than necessary, causing significant losses for the company. Thanks to Claims QA and the use of Artificial Intelligence, we are constantly analyzing active and closed policies and claims to optimize the payments made, not only for claims that have already occurred but also for potential future ones.</p>
+      </section>
+
+      <section id="research" class="project-section">
+        <div class="project-section-text">
+          <h2>Understanding the need</h2>
+          <p class="project-copy v2-full-only">Through research and user interviews, we analyzed the current flows used to detect this type of incident. The large volume of claims, combined with processes that are partly manual and partly non-standardized, revealed that thousands of cases cannot be analyzed in time, or even identified.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/QA-02.webp" alt="Research">
+          <img class="project-ph" src="images/QA-03.webp" alt="Research">
+          <img class="project-ph" src="images/QA-04.webp" alt="Research">
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="project-section-text">
+          <h2>A new logic that fits the need</h2>
+          <p class="project-copy v2-full-only">User feedback made us understand that the goal is not to automate the current process, but to redesign its logic so that issues can be detected in time and also anticipated ahead of policy renewals, so they don’t happen again.</p>
+        </div>
+        <div class="project-ph-stack">
+          <img class="project-ph" src="images/QA-05.webp" alt="User feedback">
+          <img class="project-ph" src="images/QA-06.webp" alt="User feedback">
+        </div>
+      </section>
+
+      <div id="prototypes">
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Vibe coding for living prototypes</h2>
+            <p class="project-copy v2-full-only">Thanks to vibe coding, we were able to create navigable prototypes for user testing. On a platform this complex, with such high data density, giving users the freedom to navigate the product was essential to understand how they expect to work with this data.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/QA-07.webp" alt="Vibe coded prototype">
+            <img class="project-ph" src="images/QA-08.webp" alt="Vibe coded prototype">
+            <img class="project-ph" src="images/QA-09.webp" alt="Vibe coded prototype">
+          </div>
+        </section>
+      </div>
+
+      <div id="outcome" class="project-outcome-group">
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>First version of the platform</h2>
+            <p class="project-copy v2-full-only">After iterating and defining the platform launch, we aligned the design with Zurich’s standards and design system. Internal tools follow a similar navigation and usability logic, so users don’t have to learn from scratch how to use the tool.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/QA-10.webp" alt="First version of the platform">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Flexibility for every type of user</h2>
+            <p class="project-copy v2-full-only">Because of the high volume and complexity of the data the platform handles, we designed dynamic data panels that users can show or hide, and they can choose to view content side by side or stacked. This flexibility lets us adapt to different ways of working.</p>
+          </div>
+          <div class="project-ph-stack">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/QA-11.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>Grouped content and action phases</h2>
+            <p class="project-copy v2-full-only">For technical users, we designed information views divided into specific sections, allowing them to dig deeper or stay higher-level on each case as needed. Creating reports is a step-by-step flow that lets users act directly on the problem and deliver the solution. Using color to distinguish AI-generated data, database data, and the user’s own data speeds up the task.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/QA-12.webp" alt="Grouped content">
+            <img class="project-ph" src="images/QA-13.webp" alt="Action phases">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/QA-14.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>The right information for each user</h2>
+            <p class="project-copy v2-full-only">The platform is used by technical users, managers, and department leads, so information is organized by what each of them needs to see and at what level of depth. Charts speed up the interpretation of data and the actions to take at each level.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/QA-15.webp" alt="Dashboard">
+            <img class="project-ph" src="images/QA-16.webp" alt="Dashboard">
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-section-text">
+            <h2>AI assistance for every user</h2>
+            <p class="project-copy v2-full-only">On top of that, every user has an AI assistant that can search for information, classify data, and generate reports, so they can go from a question to an action without leaving the platform.</p>
+          </div>
+          <div class="project-ph-stack">
+            <img class="project-ph" src="images/QA-17.webp" alt="Dashboard">
+            <video class="project-ph project-ph-video" autoplay muted loop playsinline>
+              <source src="images/QA-18.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+      </div>
+
+      <section id="business-impact" class="project-section v2-full-only">
+        <div class="project-section-text">
+          <h2>Business impact</h2>
+          <div class="project-impact-cards">
+            <div class="project-impact-card"><p class="project-impact-number">+$2.1M</p><p class="project-impact-desc">Detected in incorrect or out-of-range payments in the UK alone between 2022 and 2026.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">+215%</p><p class="project-impact-desc">Cases analyzed in search of discrepancies, compared to 2025.</p></div>
+            <div class="project-impact-card"><p class="project-impact-number">73%</p><p class="project-impact-desc">Of users have adopted the platform in its beta version.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="conclusions" class="project-section-text v2-full-only">
+        <h2>Conclusions</h2>
+        <p class="project-copy">Designing internal platforms is a real challenge because there are many variables to align. It’s not just UX and UI, but also business, legal, and technical feasibility. Working closely with the different levels of users has been a key step in understanding each need from their point of view, with the clear goal of solving the same problem together. Users have been very positive throughout, which has been a pleasure, because they help drive continuous improvement toward a tool that lets them do their jobs better.</p>
+      </div>
+
+      <div class="project-divider-row">
+        <p class="project-legal">Note: some data here has been adjusted for confidentiality and may not be fully exact.</p>
+      </div>
+
+      <div class="project-footer-nav">
+        <a href="index.html">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="9,4 3,10 9,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to Work
+        </a>
+        <a href="zurich-plus.html">
+          Next
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="3" y1="10" x2="17" y2="10" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="11,4 17,10 11,16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
