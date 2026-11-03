@@ -489,6 +489,26 @@ document.addEventListener("DOMContentLoaded", () => {
       addToggle(video, wrap);
     });
   };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
+  // First-frame fallback. Some phones (iOS in Low Power Mode, data saver)
+  // refuse to autoplay, and without a poster the video is just an empty grey
+  // box. Asking for the media at t=0.001 makes the browser decode and show
+  // the first frame; autoplay still runs wherever it's allowed.
+  const showFirstFrame = () => {
+    document.querySelectorAll("video").forEach((video) => {
+      let changed = false;
+      video.querySelectorAll("source[src]").forEach((source) => {
+        const src = source.getAttribute("src");
+        if (src && src.indexOf("#") === -1) {
+          source.setAttribute("src", src + "#t=0.001");
+          changed = true;
+        }
+      });
+      video.setAttribute("preload", "auto");
+      if (changed) video.load();
+    });
+  };
+
+  const start = () => { init(); showFirstFrame(); };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
 })();
