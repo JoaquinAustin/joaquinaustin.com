@@ -323,6 +323,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".project-v2-toc a, .project-v2-mobile-nav a").forEach((link) => {
       link.addEventListener("click", () => {
+        // The email link only copies the address: keep the menu open so
+        // the "Copied" tag shows where the person tapped.
+        if (link.hasAttribute("data-copy-email")) return;
         document.body.classList.remove("menu-open");
         menuToggle.setAttribute("aria-expanded", "false");
       });
@@ -454,6 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // (Without JS the original mailto: link stays untouched.)
     link.removeAttribute("href");
     link.setAttribute("role", "button");
+    link.setAttribute("data-copy-email", "");
     link.setAttribute("tabindex", "0");
     link.style.cursor = "pointer";
     const copy = (e) => {
