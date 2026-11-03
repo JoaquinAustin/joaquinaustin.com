@@ -394,6 +394,86 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ---- Email links: copy the address instead of opening a mail app ----
+  // Clicking any mailto: link copies the address to the clipboard and
+  // briefly swaps the link text to "Copied". If the browser blocks
+  // clipboard access, it falls back to the normal mailto: behaviour.
+  const copyText = (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (err) { /* ignore */ }
+      ta.remove();
+      ok ? resolve() : reject(new Error("copy failed"));
+    });
+  };
+
+  // Tiny "Copied" tag that appears next to the cursor (or next to the link,
+  // for keyboard users), styled like the "Password" tags on the home.
+  const toastStyle = document.createElement("style");
+  toastStyle.textContent =
+    ".copy-toast{position:fixed;left:0;top:0;margin:0;display:inline-flex;align-items:center;" +
+    "background:#F5F5F5;color:#5A5E67;font:inherit;font-size:12px;line-height:1;font-weight:500;" +
+    "padding:5px 10px;border-radius:999px;opacity:0;pointer-events:none;white-space:nowrap;" +
+    "transform:translateY(4px);transition:opacity .18s ease,transform .18s ease;z-index:2000}" +
+    ".copy-toast.is-visible{opacity:1;transform:translateY(0)}" +
+    "@media (prefers-reduced-motion:reduce){.copy-toast{transition:none;transform:none}}";
+  document.head.appendChild(toastStyle);
+  const toast = document.createElement("div");
+  toast.className = "copy-toast";
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  document.body.appendChild(toast);
+  let toastTimer = null;
+  const showToast = (message, x, y) => {
+    window.clearTimeout(toastTimer);
+    toast.textContent = message;
+    const w = toast.offsetWidth, h = toast.offsetHeight;
+    let left = x + 14, top = y + 12;
+    if (left + w > window.innerWidth - 8) left = x - w - 14;
+    if (top + h > window.innerHeight - 8) top = y - h - 12;
+    toast.style.left = Math.max(8, left) + "px";
+    toast.style.top = Math.max(8, top) + "px";
+    toast.classList.add("is-visible");
+    toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 1400);
+  };
+
+  document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+    const address = link.getAttribute("href").replace(/^mailto:/i, "").split("?")[0];
+    // Drop the href so the browser doesn't show "mailto:..." in its status
+    // bar on hover; the link becomes a keyboard-accessible button instead.
+    // (Without JS the original mailto: link stays untouched.)
+    link.removeAttribute("href");
+    link.setAttribute("role", "button");
+    link.setAttribute("tabindex", "0");
+    link.style.cursor = "pointer";
+    const copy = (e) => {
+      e.preventDefault();
+      let x = e.clientX, y = e.clientY;
+      if (!x && !y) {
+        const r = link.getBoundingClientRect();
+        x = r.right; y = r.top;
+      }
+      copyText(address).then(
+        () => showToast("Copied", x, y),
+        () => { window.location.href = "mailto:" + address; }
+      );
+    };
+    link.addEventListener("click", copy);
+    link.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") copy(e);
+    });
+  });
+
   // Soft fade-out before navigating to another page on this site,
   // pairs with the fade-in animation every page runs on load.
   // Skipped only when BOTH the current page and the link target are
