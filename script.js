@@ -573,26 +573,21 @@ document.addEventListener("DOMContentLoaded", () => {
       addToggle(video, wrap);
     });
   };
-  // First-frame fallback. Some phones (iOS in Low Power Mode, data saver)
-  // refuse to autoplay, and without a poster the video is just an empty grey
-  // box. Asking for the media at t=0.001 makes the browser decode and show
-  // the first frame; autoplay still runs wherever it's allowed.
-  const showFirstFrame = () => {
+  // Poster frames. Some phones (iOS in Low Power Mode, data saver) won't
+  // autoplay and don't preload the video either, which leaves an empty grey
+  // box. Each video gets a still of its first frame as its poster, found by
+  // naming convention: images/Name.mp4 -> images/Name-poster.webp. If the
+  // poster file doesn't exist the video simply behaves as before.
+  const addPosters = () => {
     document.querySelectorAll("video").forEach((video) => {
-      let changed = false;
-      video.querySelectorAll("source[src]").forEach((source) => {
-        const src = source.getAttribute("src");
-        if (src && src.indexOf("#") === -1) {
-          source.setAttribute("src", src + "#t=0.001");
-          changed = true;
-        }
-      });
-      video.setAttribute("preload", "auto");
-      if (changed) video.load();
+      if (video.hasAttribute("poster")) return;
+      const source = video.querySelector("source[src]");
+      const src = (video.getAttribute("src") || (source && source.getAttribute("src")) || "").split("#")[0];
+      if (/\.mp4$/i.test(src)) video.setAttribute("poster", src.replace(/\.mp4$/i, "-poster.webp"));
     });
   };
 
-  const start = () => { init(); showFirstFrame(); };
+  const start = () => { init(); addPosters(); };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
