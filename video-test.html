@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Video test</title>
+<style>body{font:14px/1.4 -apple-system,sans-serif;margin:16px;background:#fff;color:#111}video{width:100%;background:#ccc;display:block;margin:8px 0}pre{white-space:pre-wrap;background:#f5f5f5;padding:8px;border-radius:8px;font-size:12px}</style></head><body>
+<h3>iPhone video test</h3><pre id="ua"></pre>
+<p><b>A</b> — vídeo actual (images/QA-11.mp4)</p>
+<video id="a" autoplay muted loop playsinline><source src="images/QA-11.mp4" type="video/mp4"></video><pre id="la"></pre>
+<script>
+document.getElementById("ua").textContent=navigator.userAgent;
+["a"].forEach(function(id){var v=document.getElementById(id),l=document.getElementById("l"+id),t0=Date.now();
+function log(m){l.textContent+=((Date.now()-t0)+"ms "+m+"\n")}
+["loadstart","loadedmetadata","loadeddata","canplay","playing","pause","stalled","suspend","error","emptied"].forEach(function(e){v.addEventListener(e,function(){log(e+(e==="error"&&v.error?" code="+v.error.code:""))})});
+setTimeout(function(){log("t+1.5s paused="+v.paused+" readyState="+v.readyState+" networkState="+v.networkState);
+var p=v.play();if(p&&p.catch)p.then(function(){log("play() OK")}).catch(function(e){log("play() RECHAZADO: "+e.name+" - "+e.message)})},1500);});
+</script></body></html>
