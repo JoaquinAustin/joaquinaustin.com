@@ -401,8 +401,8 @@ body[data-theme="earth"] {
 .joa-lightbox-content {
   /* Enlarged view (3:2 media): fits the viewport but never goes past
      1200px wide. Change the last value to make it bigger or smaller. */
-  width: min(calc(100vw - 80px), calc((100vh - 80px) * 1.5), 1200px);
-  aspect-ratio: 3 / 2;
+  width: min(calc(100vw - 80px), calc((100vh - 80px) * var(--lb-ratio, 1.5)), 1200px);
+  aspect-ratio: var(--lb-ratio, 1.5);
   background: #d9d9d9;
   border-radius: 16px;
   overflow: hidden;

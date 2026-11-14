@@ -114,6 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openLightbox = (sourceEl) => {
       content.innerHTML = "";
+      // Match the enlarged box to the proportion of the clicked media
+      // (3:2 stays 3:2, 2160x1900 gets its own box) so no side bands show.
+      const srcBox = sourceEl.getBoundingClientRect();
+      if (srcBox.width && srcBox.height) {
+        content.style.setProperty("--lb-ratio", (srcBox.width / srcBox.height).toFixed(4));
+      }
       if (sourceEl.tagName === "VIDEO") {
         const clone = document.createElement("video");
         clone.src = sourceEl.currentSrc || sourceEl.querySelector("source")?.src || "";
